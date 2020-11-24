@@ -1,0 +1,36 @@
+version: "3"
+
+networks:
+  dong:
+
+services:
+  web:
+    container_name: dong-php
+    image: "${REGISTRY}zbk/php:1.6-alpine"
+    privileged: true
+    restart: always
+    hostname: php
+    networks:
+      - dong
+    depends_on:
+      - redis
+    volumes:
+      - $PWD/:/var/www/html
+    environment:
+      HOST_IP: ${HOST_IP}
+
+  nginx:
+    container_name: dong-nginx
+    image: "${REGISTRY}zbk/nginx-api:1.1.1"
+    privileged: true
+    restart: always
+    hostname: nginx
+    networks:
+      - dong
+    volumes:
+      - $PWD/web:/var/www/html
+    ports:
+      - "81:81"
+#      - "82:82"
+
+

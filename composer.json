@@ -1,0 +1,24 @@
+{
+    "name": "wrdong/uploadfile",
+    "description": "文件上传",
+    "type": "l",
+    "require": {
+        "php": "^7.3"
+    },
+    "require-dev": {
+        "php": "^7.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "WR.dong",
+            "email": "blooddong@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Wrdong\\": "src/"
+        }
+    }
+}
