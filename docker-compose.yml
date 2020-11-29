@@ -12,8 +12,6 @@ services:
     hostname: php
     networks:
       - dong
-    depends_on:
-      - redis
     volumes:
       - $PWD/:/var/www/html
     environment:
@@ -30,7 +28,7 @@ services:
     volumes:
       - $PWD/web:/var/www/html
     ports:
-      - "81:81"
+      - "91:81"
 #      - "82:82"
 
 
